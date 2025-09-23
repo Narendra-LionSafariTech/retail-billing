@@ -1,4 +1,8 @@
 package com.retail.billing.services;
 
-public class CategoryService {
+import com.retail.billing.io.CategoryRequest;
+import com.retail.billing.io.CategoryResponse;
+
+public interface CategoryService {
+    CategoryResponse add (CategoryRequest request);
 }

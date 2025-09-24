@@ -2,16 +2,19 @@ package com.retail.billing.controller;
 
 import com.retail.billing.io.CategoryRequest;
 import com.retail.billing.io.CategoryResponse;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.retail.billing.services.CategoryService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/categories")
+@RequiredArgsConstructor
 public class CategoryController {
+    private final CategoryService categoryService;
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public CategoryResponse addCategory(@RequestBody CategoryRequest request){
-
+        return  categoryService.add(request);
     }
 }

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.UUID;
 
 @Service
+
 public class CategoryServiceImpl implements CategoryService {
     private  final CategoryRepository categoryRepository;
 
@@ -30,7 +31,7 @@ public class CategoryServiceImpl implements CategoryService {
                 .name(newCategory.getName())
                 .description(newCategory.getDescription())
                 .bgColor(newCategory.getBgColor())
-                .imgUrl(newCategory.getBgColor())
+                .imgUrl(newCategory.getImgUrl())
                 .createdAt(newCategory.getCreatedAt())
                 .updatedAt(newCategory.getUpdatedAt())
                 .build();
